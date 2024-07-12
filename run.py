@@ -1,6 +1,14 @@
 import os
 import subprocess
 import time
+
+# Check if colorama is installed, if not, install it
+try:
+    import colorama
+except ImportError:
+    subprocess.run(["pip", "install", "colorama"], check=True)
+    import colorama
+
 from colorama import Fore, Style
 
 os.system('clear')
