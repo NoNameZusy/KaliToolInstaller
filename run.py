@@ -2,7 +2,6 @@ import os
 import subprocess
 import time
 
-# Check if colorama is installed, if not, install it
 try:
     import colorama
 except ImportError:
