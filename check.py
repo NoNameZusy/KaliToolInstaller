@@ -29,14 +29,15 @@ time.sleep(2)
 try:
     output = os.popen("dpkg-query -W -f='${Package}\n'").read().splitlines()
 
+    # Her bir paketi kontrol et ve durumunu yazdır
     for package in output:
         result = os.system(f"dpkg -s {package} > /dev/null 2>&1")
         if result == 0:
-            print(f"{package.ljust(30)}[" + Fore.LIGHTGREEN_EX + "OK" + Style.RESET_ALL + "]")
+            print(f"{package.ljust(40)}[ " + Fore.LIGHTGREEN_EX + "OK" + Style.RESET_ALL + " ]")
         else:
-            print(f"{package.ljust(30)}[" + Fore.RED + "Not found" + Style.RESET_ALL + "]")
+            print(f"{package.ljust(40)}[ " + Fore.RED + "Not found" + Style.RESET_ALL + " ]")
         
-        time.sleep(1)
+        time.sleep(0.2)
 
 except KeyboardInterrupt:
     print("\nExiting...")
