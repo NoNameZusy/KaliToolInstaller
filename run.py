@@ -69,13 +69,15 @@ def check_and_install_tools():
     
     """
     print(logo)
+    time.sleep(1)
     print(Fore.LIGHTBLUE_EX + "[MESSAGE]"+ Fore.WHITE + " Checking installed tools...\n")
+    time.sleep(1)
     for tool in kali_tools:
-        time.sleep(1)
+        time.sleep(0.2)
         if tool in installed_tools:
-            print(f"{tool.ljust(27)}[" + Fore.LIGHTGREEN_EX + "OK" + Style.RESET_ALL + "]")
+            print(f"{tool.ljust(40)}[ " + Fore.LIGHTGREEN_EX + "OK" + Style.RESET_ALL + " ]")
         else:
-            print(f"{tool.ljust(27)}[" + Fore.RED + "Not found" + Style.RESET_ALL + "]")
+            print(f"{tool.ljust(40)}[ " + Fore.RED + "Not found" + Style.RESET_ALL + " ]")
             tools_to_install.append(tool)
 
     if tools_to_install:
